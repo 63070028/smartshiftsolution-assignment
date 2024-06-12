@@ -9,6 +9,7 @@ import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
+
         BufferedReader reader;
         double profit = 0;
         Map<String,LinkedList<Coin>> pockets = new HashMap<>();
@@ -17,8 +18,7 @@ public class Main {
             reader = new BufferedReader(new FileReader("crypto_tax.txt"));
             String line = reader.readLine();
             while (line != null) {
-//                System.out.println(line);
-                // read next line
+
                 String[] data = line.split(" ");
                 String action = data[0];
                 String name = data[1];
@@ -33,10 +33,8 @@ public class Main {
                         LinkedList<Coin> coins = new LinkedList<>();
                         coins.add(new Coin(price, qty));
                         pockets.put(name, coins);
-
                     }else{
                         pockets.get(name).add(new Coin(price, qty));
-
                     }
 
                 }else if(action.equals("S")){
@@ -68,7 +66,6 @@ public class Main {
                         }
 
                     }
-
                 }else{
                     System.out.println("Error");
                     break;
@@ -90,7 +87,6 @@ public class Main {
 
 
 /*
-
       price:qty
 
       pockets = [
